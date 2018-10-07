@@ -1,0 +1,34 @@
+{
+  "name": "modmail",
+  "version": "0.0.1",
+  "description": "A Discord ModMail bot!",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexdemaster/modmail.git"
+  },
+  "keywords": [
+    "discord",
+    "discord",
+    "bot",
+    "modmail",
+    "discord",
+    "modmail",
+    "modmail",
+    "bot"
+  ],
+  "author": "Kovacs Alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexdemaster/modmail/issues"
+  },
+  "homepage": "https://github.com/alexdemaster/modmail#readme",
+  "dependencies": {
+    "darabok": "^0.5.4",
+    "discord.js": "^11.4.2",
+    "fs-extra": "^7.0.0"
+  }
+}
