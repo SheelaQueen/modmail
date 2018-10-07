@@ -1,5 +1,4 @@
 const { Command } = require('darabok');
-const { RichEmbed } = require('discord.js');
 const fs = require('fs-extra');
 
 module.exports = class extends Command {
@@ -33,17 +32,10 @@ module.exports = class extends Command {
         modlogs[caseNumber].answer = answer.join(' ');
         modlogs[caseNumber].answerer = message.author.id;
 
-        const embed = new RichEmbed()
-            .setAuthor(message.author.tag, message.author.displayAvatarURL)
-            .setDescription(answer.join(' '))
-            .setFooter(`You got a reply for Case #${caseNumber}!`)
-            .setColor('#66ccff')
-            .setTimestamp();
-
         const questioner = this.client.users.get(modlogs[caseNumber].questioner);
         await fs.writeJSON('./src/db/modlogs.json', modlogs);
 
-        await questioner.send(embed)
+        await questioner.send(`You got a reply for Case #${caseNumber}: \`${answer.join(' ')}\``);
         message.channel.send('The reply has been sent!');
     }
 }
