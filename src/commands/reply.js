@@ -26,6 +26,7 @@ module.exports = class extends Command {
 
         const [caseNumber, ...answer] = args;
 
+        if (!caseNumber || isNaN(caseNumber)) return message.channel.send("You must mention which case log you want to reply to! (must be a number)")
         if (!modlogs[caseNumber]) return message.channel.send("There isn't a case with this number!");
         if (answer.join(' ').length <= 1) return message.channel.send('Invalid answer!');
 
