@@ -43,6 +43,7 @@ module.exports = class extends Command {
         const questioner = this.client.users.get(modlogs[caseNumber].questioner);
         await fs.writeJSON('./src/db/modlogs.json', modlogs);
 
-        questioner.send(embed)
+        await questioner.send(embed)
+        message.channel.send('The reply has been sent!');
     }
 }
