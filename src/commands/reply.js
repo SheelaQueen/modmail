@@ -35,7 +35,7 @@ module.exports = class extends Command {
         const questioner = this.client.users.get(modlogs[caseNumber].questioner);
         await fs.writeJSON('./src/db/modlogs.json', modlogs);
 
-        await questioner.send(`You got a reply for Case #${caseNumber}: \`${answer.join(' ')}\``);
+        await questioner.send(`You got a reply for Case #${caseNumber}: ${answer.join(' ')}`);
         message.channel.send('The reply has been sent!');
     }
 }
